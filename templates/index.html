@@ -1,0 +1,305 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienestar360 | Cumple con la NOM-035 y Mejora el Clima Laboral</title>
+    <meta name="description" content="Aplica encuestas profesionales de la NOM-035 para evitar multas, mejorar el bienestar y reducir la rotación. Soluciones para RRHH.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-shield-heart"></i> Bienestar<strong>360</strong>
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#nom-035">NOM-035</a></li>
+                    <li><a href="#servicio">Servicio</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contacto" class="btn btn-secondary">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO SECTION -->
+        <section id="hero">
+            <div class="hero-content">
+                <div class="container">
+                    <h1>Cumple con la NOM-035 y potencía el bienestar laboral</h1>
+                    <p>Aplica encuestas profesionales, confidenciales y alineadas a la normativa. Evita sanciones y transforma tu clima organizacional.</p>
+                    <a href="#contacto" class="btn btn-primary">Solicita una Demo Gratuita</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ¿QUÉ ES LA NOM-035? -->
+        <section id="nom-035" class="container section-padding">
+            <h2 class="section-title">¿Qué es y por qué es crucial la <strong>NOM-035</strong>?</h2>
+            <div class="grid-2-col">
+                <div>
+                    <p>La <strong>NOM-035-STPS-2018</strong> es una normativa oficial mexicana que obliga a todas las empresas a identificar, analizar y prevenir los factores de riesgo psicosocial en el trabajo.</p>
+                    <p>Ignorarla o aplicarla incorrectamente no solo expone a tu empresa a <strong>multas de hasta $500,000 MXN</strong>, sino que también perpetúa un mal clima laboral, aumenta la rotación y reduce la productividad.</p>
+                </div>
+                <div>
+                    <p>Una aplicación deficiente con herramientas genéricas puede llevar a diagnósticos erróneos y decisiones que no resuelven los problemas de fondo. Proteger la salud mental de tu equipo es proteger la salud de tu empresa.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. NUESTRO SERVICIO -->
+        <section id="servicio" class="bg-light section-padding">
+            <div class="container">
+                <h2 class="section-title">Una solución profesional, <strong>más allá de un simple formulario</strong></h2>
+                <div class="grid-3-col features">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <h3>Confidencialidad Real</h3>
+                        <p>Garantizamos el anonimato total de los colaboradores para obtener respuestas honestas y datos fiables.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <h3>Reportes con Insights</h3>
+                        <p>Traducimos los datos en reportes claros y visuales que identifican áreas críticas y oportunidades de mejora.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-brain"></i>
+                        <h3>Diseño Experto</h3>
+                        <p>Nuestras encuestas están diseñadas por psicólogos laborales, asegurando validez y apego a la normativa.</p>
+                    </div>
+                </div>
+                <div class="comparison-table">
+                    <h3 class="comparison-title">Encuesta Genérica vs. <strong>Bienestar360</strong></h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Característica</th>
+                                <th>Plantillas Gratuitas / Genéricas</th>
+                                <th>Solución Bienestar360</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Validez Normativa</td>
+                                <td class="negative"><i class="fa-solid fa-times-circle"></i> Dudosa</td>
+                                <td class="positive"><i class="fa-solid fa-check-circle"></i> Garantizada</td>
+                            </tr>
+                            <tr>
+                                <td>Anonimato y Confianza</td>
+                                <td class="negative"><i class="fa-solid fa-times-circle"></i> Bajo</td>
+                                <td class="positive"><i class="fa-solid fa-check-circle"></i> Totalmente anónimo</td>
+                            </tr>
+                            <tr>
+                                <td>Análisis de Resultados</td>
+                                <td class="negative"><i class="fa-solid fa-times-circle"></i> Manual y superficial</td>
+                                <td class="positive"><i class="fa-solid fa-check-circle"></i> Automático y profundo</td>
+                            </tr>
+                             <tr>
+                                <td>Soporte Experto</td>
+                                <td class="negative"><i class="fa-solid fa-times-circle"></i> Nulo</td>
+                                <td class="positive"><i class="fa-solid fa-check-circle"></i> Acompañamiento RRHH</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. BENEFICIOS PARA RRHH -->
+        <section id="beneficios" class="container section-padding">
+             <h2 class="section-title">Beneficios directos para tu <strong>gestión de RRHH</strong></h2>
+             <div class="grid-4-col">
+                 <div class="benefit-card">
+                     <i class="fa-solid fa-arrow-trend-down"></i>
+                     <h4>Disminuye la Rotación</h4>
+                     <p>Identifica y atiende las causas de insatisfacción antes de que se conviertan en renuncias.</p>
+                 </div>
+                 <div class="benefit-card">
+                     <i class="fa-solid fa-users"></i>
+                     <h4>Mejora el Clima</h4>
+                     <p>Fomenta un ambiente de confianza y escucha activa que eleva la moral y el compromiso.</p>
+                 </div>
+                 <div class="benefit-card">
+                     <i class="fa-solid fa-file-invoice-dollar"></i>
+                     <h4>Evita Sanciones</h4>
+                     <p>Cumple con la ley de forma correcta y documentada, protegiendo a tu empresa de multas.</p>
+                 </div>
+                 <div class="benefit-card">
+                     <i class="fa-solid fa-lightbulb"></i>
+                     <h4>Decide con Datos</h4>
+                     <p>Basa tus estrategias de bienestar en evidencia real, no en suposiciones.</p>
+                 </div>
+             </div>
+        </section>
+
+        <!-- 5. PROCESO EN 3 PASOS -->
+        <section id="proceso" class="bg-light section-padding">
+            <div class="container">
+                <h2 class="section-title">Nuestro proceso: <strong>simple, rápido y efectivo</strong></h2>
+                <div class="grid-3-col process-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Personalización</h3>
+                        <p>Adaptamos la encuesta a la estructura y necesidades específicas de tu organización.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Aplicación Anónima</h3>
+                        <p>Distribuimos la encuesta a través de un link único y seguro para garantizar el anonimato.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Reporte de Resultados</h3>
+                        <p>Recibes un reporte ejecutivo con hallazgos clave y recomendaciones accionables.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 6. TESTIMONIOS -->
+        <section id="testimonios" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">Empresas que ya <strong>mejoran su bienestar</strong></h2>
+                <div class="grid-2-col">
+                    <div class="testimonial-card">
+                        <p>"El reporte fue revelador. Detectamos un problema de sobrecarga en un área que no teníamos en el radar. La rotación en ese equipo bajó un 20% en 6 meses."</p>
+                        <footer>
+                            <strong>Laura Jiménez</strong><br>
+                            <cite>Gerente de RRHH en InnovaTech</cite>
+                        </footer>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"La confianza que generó el anonimato fue clave. Cumplimos con la NOM-035 y obtuvimos un plan de acción claro para mejorar el liderazgo. Lo recomiendo totalmente."</p>
+                        <footer>
+                            <strong>Carlos Mendoza</strong><br>
+                            <cite>Director de Operaciones en Logística Express</cite>
+                        </footer>
+                    </div>
+                </div>
+                <div class="company-logos">
+                    <i class="fa-brands fa-diaspora" title="InnovaTech"></i>
+                    <i class="fa-brands fa-docker" title="Logística Express"></i>
+                    <i class="fa-brands fa-evernote" title="CorpSolutions"></i>
+                    <i class="fa-brands fa-fedora" title="Manufactura Global"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FAQ -->
+        <section id="faq" class="bg-light section-padding">
+            <div class="container">
+                <h2 class="section-title">Preguntas Frecuentes</h2>
+                <div class="faq-container">
+                    <details>
+                        <summary>
+                            ¿Es realmente obligatoria la NOM-035 para mi empresa?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+                        <p>Sí. Es obligatoria para TODOS los centros de trabajo en México. La intensidad de las obligaciones varía según el número de empleados (hasta 15, de 16 a 50, y más de 50), pero ninguna empresa está exenta de aplicarla.</p>
+                    </details>
+                    <details>
+                        <summary>
+                            ¿Cómo garantizan el anonimato de las respuestas?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+                        <p>Utilizamos una plataforma tecnológica independiente. Los empleados responden a través de un enlace único que no recopila datos personales (IP, correo, nombre). Nosotros entregamos a RRHH únicamente los resultados consolidados y estadísticos, nunca respuestas individuales.</p>
+                    </details>
+                    <details>
+                        <summary>
+                            ¿Qué riesgos corro si no la aplico o la aplico mal?
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </summary>
+                        <p>Los riesgos son tres: <strong>1) Legales:</strong> Multas por parte de la STPS. <strong>2) Operativos:</strong> Alta rotación, ausentismo y baja productividad. <strong>3) Estratégicos:</strong> Tomar decisiones de personal basadas en información incorrecta, lo que puede agravar los problemas existentes.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. FORMULARIO DE CONTACTO -->
+        <section id="contacto" class="section-padding">
+            <div class="container">
+                <div class="grid-2-col contact-grid">
+                    <div class="contact-info">
+                        <h3>¿Listo para tomar el control?</h3>
+                        <p>Agenda una asesoría gratuita y sin compromiso. Te mostraremos cómo nuestra plataforma puede adaptarse a tu empresa y resolver tus dudas sobre la NOM-035.</p>
+                        <a href="https://wa.me/5215512345678?text=Hola,%20quisiera%20más%20información%20sobre%20las%20encuestas%20NOM-035." class="contact-link" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Envíanos un WhatsApp
+                        </a>
+                        <a href="mailto:hola@bienestar360.site" class="contact-link">
+                            <i class="fa-regular fa-envelope"></i> hola@bienestar360.site
+                        </a>
+                    </div>
+                    <div class="contact-form-wrapper">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                          {% if messages %}
+                            {% for category, message in messages %}
+                              <div class="flash-message {{ category }}">{{ message }}</div>
+                            {% endfor %}
+                          {% endif %}
+                        {% endwith %}
+                        <form id="contact-form" action="/submit_form" method="POST">
+                            <div class="form-group">
+                                <label for="nombre">Nombre completo</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="empresa">Empresa</label>
+                                <input type="text" id="empresa" name="empresa" required>
+                            </div>
+                             <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono">
+                            </div>
+                            <div class="form-group">
+                                <label for="mensaje">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Agenda una asesoría gratuita</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer-bottom">
+        <div class="container">
+            <p>&copy; 2025 Bienestar360.site. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Popup/Modal (Opcional) -->
+    <div id="demo-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Modal de Demo</h2>
+            <p>Aquí puedes poner un formulario de Calendly, más información o un video.</p>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
