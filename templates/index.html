@@ -324,22 +324,23 @@
             </div>
         </section>
 
-        <!-- 5. NUEVA SECCIÓN: YOUTUBE EMBEDDER -->
+         <!-- 5. SECCIÓN DE VIDEO INCRUSTADO -->
         <section id="video" class="py-5 bg-light">
             <div class="container">
-                <h2 class="section-title">Visualice el Impacto del <strong>Bienestar Laboral</strong></h2>
+                <h2 class="section-title">Visualice las <strong>Medidas Preventivas Clave</strong></h2>
                 <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <p class="lead mb-4">Medidas preventivas</p>
-                        <div class="input-group mb-3 shadow-sm">
-                            <input type="text" id="youtube-link-input" class="form-control form-control-lg" placeholder="https://www.https://www.youtube.com/watch?v=CIoYnGUkV_Q" aria-label="Enlace de YouTube">
-                            <button class="btn btn-primary" type="button" id="embed-video-btn" aria-label="Incrustar video">
-                                <i class="fa-solid fa-play me-2"></i> Cargar Video
-                            </button>
-                        </div>
-                        <div id="video-error" class="text-danger mt-2"></div>
-                        <div id="video-embed-container" class="ratio ratio-16x9 mt-4 rounded shadow" style="display: none;">
-                            <!-- El Iframe se insertará aquí dinámicamente -->
+                    <div class="col-lg-9 text-center">
+                        <p class="lead mb-4">Comprender y aplicar las medidas de prevención es fundamental para cumplir con la NOM-035. Este video resume los puntos más importantes.</p>
+                        <!-- Contenedor responsivo para el video 16:9 -->
+                        <div class="ratio ratio-16x9 rounded shadow">
+                            <iframe 
+                                src="https://www.youtube.com/embed/CIoYnGUkV_Q" 
+                                title="Medidas de prevención de la NOM-035-STPS-2018" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen>
+                            </iframe>
                         </div>
                     </div>
                 </div>
