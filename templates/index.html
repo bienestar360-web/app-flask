@@ -1,12 +1,15 @@
-<!-- templates/index.html -->
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienestar360 | Cumple con la NOM-035 y Mejora el Clima Laboral</title>
-    <meta name="description" content="Aplica encuestas profesionales de la NOM-035 para evitar multas, mejorar el bienestar y reducir la rotación. Soluciones para RRHH.">
+    <title>Bienestar360 | Solución Definitiva a la NOM-035</title>
+    <meta name="description" content="Protege tu empresa de multas y transforma tu clima laboral. Con nuestra plataforma de encuestas NOM-035, obtén diagnósticos precisos y confidenciales.">
+    <meta name="keywords" content="NOM-035, STPS, clima laboral, encuestas, riesgo psicosocial, recursos humanos, bienestar laboral, cumplimiento normativo">
+    <meta name="author" content="Bienestar360">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,415 +17,508 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Bootstrap 5.3 CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Estilos Personalizados Integrados -->
+    <style>
+        :root {
+            --bs-primary: #0d6efd;
+            --bs-secondary: #6c757d;
+            --bs-light: #f8f9fa;
+            --bs-dark: #212529;
+            --brand-primary: #2B6CB0; /* Azul corporativo */
+            --brand-secondary: #4FD1C5; /* Verde azulado para acentos */
+            --brand-gradient: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+        }
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+        }
+
+        h1, h2, h3, h4, h5, h6, .navbar-brand strong {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        h2.section-title {
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        h2.section-title strong {
+            font-weight: 900;
+            color: var(--brand-primary);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .navbar-brand i {
+            color: var(--brand-secondary);
+        }
+
+        /* Hero Section */
+        #hero {
+            background: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 10rem 0;
+            position: relative;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 25, 47, 0.7);
+        }
+
+        #hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+        }
+        
+        /* Feature Cards & Benefit Cards */
+        .feature-card, .benefit-card {
+            background-color: white;
+            border: 1px solid #e9ecef;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover, .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+        }
+        
+        .feature-card i, .benefit-card i {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: var(--brand-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Comparison Table */
+        .comparison-table .positive {
+            color: #198754;
+            font-weight: 600;
+        }
+        .comparison-table .negative {
+            color: #dc3545;
+        }
+
+        /* FAQ Section */
+        .accordion-button:not(.collapsed) {
+            color: var(--bs-white);
+            background-color: var(--brand-primary);
+        }
+
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(43, 108, 176, 0.5);
+        }
+        
+        /* Video Embedder Section */
+        #video-embed-container {
+            transition: all 0.5s ease-in-out;
+        }
+
+        /* Footer */
+        .footer-bottom {
+            background-color: var(--bs-dark);
+            color: var(--bs-light);
+            padding: 1.5rem 0;
+        }
+
+        .flash-message {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0.25rem;
+        }
+        .flash-message.success {
+            background-color: #d1e7dd;
+            color: #0f5132;
+        }
+        .flash-message.error {
+            background-color: #f8d7da;
+            color: #842029;
+        }
+    </style>
 </head>
 <body>
 
-<!-- Header con Navbar Bootstrap -->
-<header class="main-header sticky-top">
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand logo" href="#">
-                <i class="fa-solid fa-shield-heart"></i> Bienestar<strong>360</strong>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#nom-035">NOM-035</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#servicio">Servicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#beneficios">Beneficios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#videos">Videos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                    <li class="nav-item"><a href="#contacto" class="btn btn-secondary">Contacto</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-
-<main>
-    <!-- 1. HERO SECTION -->
-    <section id="hero">
-        <div class="hero-content">
-            <div class="container text-center">
-                <h1 class="display-4 fw-bold">Cumple con la NOM-035 y potencía el bienestar laboral</h1>
-                <p class="lead">Aplica encuestas profesionales, confidenciales y alineadas a la normativa. Evita sanciones y transforma tu clima organizacional.</p>
-                <a href="#contacto" class="btn btn-primary btn-lg">Solicita una Demo Gratuita</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- 2. ¿QUÉ ES LA NOM-035? -->
-    <section id="nom-035" class="container section-padding">
-        <h2 class="section-title">¿Qué es y por qué es crucial la <strong>NOM-035</strong>?</h2>
-        <div class="row g-4 align-items-center">
-            <div class="col-lg-6">
-                <p>La <strong>NOM-035-STPS-2018</strong> es una normativa oficial mexicana que obliga a todas las empresas a identificar, analizar y prevenir los factores de riesgo psicosocial en el trabajo.</p>
-                <p>Ignorarla o aplicarla incorrectamente no solo expone a tu empresa a <strong>multas de hasta $500,000 MXN</strong>, sino que también perpetúa un mal clima laboral, aumenta la rotación y reduce la productividad.</p>
-            </div>
-            <div class="col-lg-6">
-                <p>Una aplicación deficiente con herramientas genéricas puede llevar a diagnósticos erróneos y decisiones que no resuelven los problemas de fondo. Proteger la salud mental de tu equipo es proteger la salud de tu empresa.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. NUESTRO SERVICIO -->
-    <section id="servicio" class="bg-light section-padding">
-        <div class="container">
-            <h2 class="section-title">Una solución profesional, <strong>más allá de un simple formulario</strong></h2>
-            <div class="row g-4 features text-center">
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100">
-                        <i class="fa-solid fa-user-shield"></i>
-                        <h3>Confidencialidad Real</h3>
-                        <p>Garantizamos el anonimato total de los colaboradores para obtener respuestas honestas y datos fiables.</p>
-                    </div>
+    <!-- Header y Navegación -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg bg-light shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <i class="fa-solid fa-shield-heart"></i> Bienestar<strong>360</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#nom-035">NOM-035</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#servicio">Solución</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#beneficios">Beneficios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#video">Visualizar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                        <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#contacto">Solicitar Demo</a></li>
+                    </ul>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card h-100">
-                        <i class="fa-solid fa-chart-line"></i>
-                        <h3>Reportes con Insights</h3>
-                        <p>Traducimos los datos en reportes claros y visuales que identifican áreas críticas y oportunidades de mejora.</p>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-4">
-                    <div class="feature-card h-100">
-                        <i class="fa-solid fa-brain"></i>
-                        <h3>Diseño Experto</h3>
-                        <p>Nuestras encuestas están diseñadas por psicólogos laborales, asegurando validez y apego a la normativa.</p>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="text-center text-md-start">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h1 class="display-3">Deje de arriesgarse. <span style="color: var(--brand-secondary);">Transforme su Clima Laboral.</span></h1>
+                        <p class="lead my-4">Nuestra plataforma para la <strong>NOM-035</strong> le permite ir más allá del simple cumplimiento. Identifique riesgos psicosociales, evite multas millonarias y construya un entorno de trabajo que atraiga y retenga al mejor talento.</p>
+                        <a href="#contacto" class="btn btn-primary btn-lg px-4 me-md-2">Agendar Demo Estratégica</a>
+                        <a href="#servicio" class="btn btn-outline-light btn-lg px-4">Conocer la Solución</a>
                     </div>
                 </div>
             </div>
-            <div class="comparison-table mt-5">
-                <h3 class="comparison-title">Encuesta Genérica vs. <strong>Bienestar360</strong></h3>
-                <!-- Contenedor responsive para la tabla -->
-                <div class="table-responsive">
-                    <table class="table table-bordered table-striped text-center align-middle">
-                        <thead class="table-light">
-                            <tr>
-                                <th scope="col">Característica</th>
-                                <th scope="col">Plantillas Gratuitas / Genéricas</th>
-                                <th scope="col">Solución Bienestar360</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Validez Normativa</td>
-                                <td class="negative"><i class="fa-solid fa-times-circle"></i> Dudosa</td>
-                                <td class="positive"><i class="fa-solid fa-check-circle"></i> Garantizada</td>
-                            </tr>
-                            <tr>
-                                <td>Anonimato y Confianza</td>
-                                <td class="negative"><i class="fa-solid fa-times-circle"></i> Bajo</td>
-                                <td class="positive"><i class="fa-solid fa-check-circle"></i> Totalmente anónimo</td>
-                            </tr>
-                            <tr>
-                                <td>Análisis de Resultados</td>
-                                <td class="negative"><i class="fa-solid fa-times-circle"></i> Manual y superficial</td>
-                                <td class="positive"><i class="fa-solid fa-check-circle"></i> Automático y profundo</td>
-                            </tr>
-                             <tr>
-                                <td>Soporte Experto</td>
-                                <td class="negative"><i class="fa-solid fa-times-circle"></i> Nulo</td>
-                                <td class="positive"><i class="fa-solid fa-check-circle"></i> Acompañamiento RRHH</td>
-                            </tr>
-                        </tbody>
-                    </table>
+        </section>
+
+        <!-- 2. ¿QUÉ ES LA NOM-035? -->
+        <section id="nom-035" class="py-5">
+            <div class="container">
+                <h2 class="section-title">La NOM-035: Un Riesgo Ignorado, una <strong>Oportunidad Estratégica</strong></h2>
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-6">
+                        <p class="lead">La <strong>NOM-035-STPS-2018</strong> no es opcional. Exige que todas las empresas en México identifiquen, analicen y prevengan activamente los factores de riesgo psicosocial.</p>
+                        <p>Ignorarla o gestionarla con herramientas inadecuadas no solo lo expone a <strong>sanciones de hasta $500,000 MXN</strong>, sino que fomenta un ciclo de alta rotación, ausentismo y baja productividad que drena sus recursos y competitividad.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="alert alert-warning" role="alert">
+                            <h4 class="alert-heading"><i class="fa-solid fa-triangle-exclamation me-2"></i>¡Atención, RRHH!</h4>
+                            <p>Un diagnóstico deficiente con formularios genéricos conduce a conclusiones erróneas y acciones ineficaces. Proteger la salud mental de su equipo es una inversión directa en la salud financiera y operativa de su organización.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 4. BENEFICIOS PARA RRHH -->
-    <section id="beneficios" class="container section-padding">
-         <h2 class="section-title">Beneficios directos para tu <strong>gestión de RRHH</strong></h2>
-         <div class="row g-4 text-center">
-             <div class="col-sm-6 col-lg-3">
-                 <div class="benefit-card h-100">
-                     <i class="fa-solid fa-arrow-trend-down"></i>
-                     <h4>Disminuye la Rotación</h4>
-                     <p>Identifica y atiende las causas de insatisfacción antes de que se conviertan en renuncias.</p>
+        <!-- 3. NUESTRO SERVICIO -->
+        <section id="servicio" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title">Nuestra Solución: <strong>Inteligencia y Confianza</strong> para RRHH</h2>
+                <div class="row g-4 mb-5">
+                    <div class="col-lg-4 d-flex">
+                        <div class="feature-card w-100">
+                            <i class="fa-solid fa-user-shield"></i>
+                            <h3 class="h5">Confidencialidad Blindada</h3>
+                            <p>Plataforma 100% anónima que fomenta respuestas transparentes y genera datos de máxima fiabilidad para su análisis.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex">
+                        <div class="feature-card w-100">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <h3 class="h5">Reportes Estratégicos</h3>
+                            <p>Convertimos datos crudos en dashboards visuales e intuitivos. Identifique focos rojos y oportunidades de mejora en minutos.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex">
+                        <div class="feature-card w-100">
+                            <i class="fa-solid fa-brain"></i>
+                            <h3 class="h5">Validez Psicométrica</h3>
+                            <p>Nuestras encuestas, diseñadas por psicólogos laborales, garantizan el total apego a la norma y la validez científica de los resultados.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="text-center mb-4">Formularios Gratuitos vs. <strong>Solución Bienestar360</strong></h3>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="table-responsive comparison-table">
+                            <table class="table table-bordered table-hover text-center">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="text-start">Característica Clave</th>
+                                        <th>Plantillas Genéricas (Forms, etc.)</th>
+                                        <th style="background: rgba(43, 108, 176, 0.1);">Plataforma Bienestar360</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-start">Validez Normativa STPS</td>
+                                        <td class="negative"><i class="fa-solid fa-times-circle me-1"></i> Dudosa</td>
+                                        <td class="positive"><i class="fa-solid fa-check-circle me-1"></i> 100% Garantizada</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start">Anonimato y Confianza del Empleado</td>
+                                        <td class="negative"><i class="fa-solid fa-times-circle me-1"></i> Percepción Baja</td>
+                                        <td class="positive"><i class="fa-solid fa-check-circle me-1"></i> Total y Auditable</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start">Análisis de Resultados</td>
+                                        <td class="negative"><i class="fa-solid fa-times-circle me-1"></i> Manual y Superficial</td>
+                                        <td class="positive"><i class="fa-solid fa-check-circle me-1"></i> Automático y Profundo</td>
+                                    </tr>
+                                     <tr>
+                                        <td class="text-start">Soporte y Asesoría Experta</td>
+                                        <td class="negative"><i class="fa-solid fa-times-circle me-1"></i> Nulo</td>
+                                        <td class="positive"><i class="fa-solid fa-check-circle me-1"></i> Acompañamiento Estratégico</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 4. BENEFICIOS PARA RRHH -->
+        <section id="beneficios" class="py-5">
+             <div class="container">
+                 <h2 class="section-title">Impacto Directo en sus <strong>Indicadores de RRHH</strong></h2>
+                 <div class="row g-4">
+                     <div class="col-md-6 col-lg-3 d-flex">
+                         <div class="benefit-card w-100">
+                             <i class="fa-solid fa-arrow-trend-down"></i>
+                             <h4 class="h5">Reduzca la Rotación</h4>
+                             <p>Ataque las causas raíz de la insatisfacción y el burnout antes de que se conviertan en costosas renuncias.</p>
+                         </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3 d-flex">
+                         <div class="benefit-card w-100">
+                             <i class="fa-solid fa-users-gear"></i>
+                             <h4 class="h5">Eleve el Compromiso</h4>
+                             <p>Cree un ambiente de seguridad psicológica donde los empleados se sientan escuchados, valorados y motivados.</p>
+                         </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3 d-flex">
+                         <div class="benefit-card w-100">
+                             <i class="fa-solid fa-file-invoice-dollar"></i>
+                             <h4 class="h5">Blinde a la Empresa</h4>
+                             <p>Genere la evidencia documental requerida y cumpla con la ley de forma irrefutable, evitando multas.</p>
+                         </div>
+                     </div>
+                     <div class="col-md-6 col-lg-3 d-flex">
+                         <div class="benefit-card w-100">
+                            <i class="fa-solid fa-lightbulb"></i>
+                             <h4 class="h5">Decisiones Inteligentes</h4>
+                             <p>Abandone las suposiciones. Base sus estrategias de capital humano en datos reales y accionables.</p>
+                         </div>
+                     </div>
                  </div>
-             </div>
-             <div class="col-sm-6 col-lg-3">
-                 <div class="benefit-card h-100">
-                     <i class="fa-solid fa-users"></i>
-                     <h4>Mejora el Clima</h4>
-                     <p>Fomenta un ambiente de confianza y escucha activa que eleva la moral y el compromiso.</p>
-                 </div>
-             </div>
-             <div class="col-sm-6 col-lg-3">
-                 <div class="benefit-card h-100">
-                     <i class="fa-solid fa-file-invoice-dollar"></i>
-                     <h4>Evita Sanciones</h4>
-                     <p>Cumple con la ley de forma correcta y documentada, protegiendo a tu empresa de multas.</p>
-                 </div>
-             </div>
-             <div class="col-sm-6 col-lg-3">
-                 <div class="benefit-card h-100">
-                     <i class="fa-solid fa-lightbulb"></i>
-                     <h4>Decide con Datos</h4>
-                     <p>Basa tus estrategias de bienestar en evidencia real, no en suposiciones.</p>
-                 </div>
-             </div>
-         </div>
-    </section>
+            </div>
+        </section>
 
-    <!-- 5. PROCESO EN 3 PASOS -->
-    <section id="proceso" class="bg-light section-padding">
+        <!-- 5. NUEVA SECCIÓN: YOUTUBE EMBEDDER -->
+        <section id="video" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title">Visualice el Impacto del <strong>Bienestar Laboral</strong></h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <p class="lead mb-4">Pegue el enlace de un video de YouTube sobre clima laboral, liderazgo o la NOM-035 para verlo aquí mismo.</p>
+                        <div class="input-group mb-3 shadow-sm">
+                            <input type="text" id="youtube-link-input" class="form-control form-control-lg" placeholder="https://www.youtube.com/watch?v=xxxxxxxxxxx" aria-label="Enlace de YouTube">
+                            <button class="btn btn-primary" type="button" id="embed-video-btn" aria-label="Incrustar video">
+                                <i class="fa-solid fa-play me-2"></i> Cargar Video
+                            </button>
+                        </div>
+                        <div id="video-error" class="text-danger mt-2"></div>
+                        <div id="video-embed-container" class="ratio ratio-16x9 mt-4 rounded shadow" style="display: none;">
+                            <!-- El Iframe se insertará aquí dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 6. TESTIMONIOS -->
+        <section id="testimonios" class="py-5">
+            <div class="container">
+                <h2 class="section-title">Empresas que ya tomaron el <strong>Control de su Bienestar</strong></h2>
+                <div class="row g-4">
+                    <div class="col-lg-6 d-flex">
+                        <figure class="bg-light p-4 rounded shadow-sm w-100">
+                            <blockquote class="blockquote">
+                                <p>"El reporte fue un antes y un después. Detectamos una sobrecarga crítica en un área clave que no veíamos. La rotación en ese equipo ha bajado un 20% en solo seis meses. La inversión se pagó sola."</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer mt-2">
+                                Laura Jiménez, <cite title="Source Title">Gerente de RRHH en InnovaTech</cite>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-lg-6 d-flex">
+                         <figure class="bg-light p-4 rounded shadow-sm w-100">
+                            <blockquote class="blockquote">
+                                <p>"La confianza que generó una plataforma externa y anónima fue fundamental. No solo cumplimos con la NOM-035 a cabalidad, sino que obtuvimos un plan de acción claro para mejorar nuestros estilos de liderazgo."</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer mt-2">
+                                Carlos Mendoza, <cite title="Source Title">Director de Operaciones en Logística Express</cite>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FAQ -->
+        <section id="faq" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title">Preguntas Frecuentes</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        ¿Es realmente obligatoria la NOM-035 para mi empresa?
+                                    </button>
+                                </h3>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <strong>Sí, es 100% obligatoria para todos los centros de trabajo en México.</strong> Las obligaciones específicas se escalan según el número de empleados (hasta 15, de 16 a 50, y más de 50), pero absolutamente ninguna empresa está exenta de su cumplimiento fundamental.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        ¿Cómo aseguran un anonimato a prueba de todo?
+                                    </button>
+                                </h3>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Utilizamos una plataforma tecnológica independiente donde los empleados acceden a través de un enlace único y seguro que <strong>no recopila ningún dato de identificación personal</strong> (IP, correo, nombre). A RRHH se le entregan exclusivamente resultados consolidados y estadísticos, haciendo técnicamente imposible rastrear una respuesta individual.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        ¿Qué riesgos corro si la aplico mal o la ignoro?
+                                    </button>
+                                </h3>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Los riesgos son críticos y de tres tipos: <strong>1) Legales:</strong> Multas directas de la STPS. <strong>2) Operativos:</strong> Fuga de talento, ausentismo crónico y productividad decreciente. <strong>3) Estratégicos:</strong> Tomar decisiones de capital humano basadas en datos incorrectos, lo que puede agravar los problemas de raíz en lugar de solucionarlos.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. FORMULARIO DE CONTACTO -->
+        <section id="contacto" class="py-5">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="display-5 fw-bold">¿Listo para tomar el control y dejar de suponer?</h2>
+                        <p class="lead my-4">Agende una breve demo y descubra cómo nuestra plataforma se adapta a su empresa. Le mostraremos en vivo cómo obtener un diagnóstico preciso de su clima laboral y cumplir con la NOM-035 de manera eficiente y estratégica.</p>
+                        <a href="https://wa.me/5211234567890?text=Hola,%20quisiera%20más%20información%20sobre%20las%20encuestas%20NOM-035." class="btn btn-success btn-lg mb-2" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-whatsapp me-2"></i> Enviar un WhatsApp
+                        </a>
+                        <a href="mailto:hola@bienestar360.site" class="btn btn-outline-secondary btn-lg mb-2">
+                            <i class="fa-regular fa-envelope me-2"></i> Escribir un Correo
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card p-4 shadow">
+                            <div class="card-body">
+                                {% with messages = get_flashed_messages(with_categories=true) %}
+                                  {% if messages %}
+                                    {% for category, message in messages %}
+                                      <div class="alert alert-{{ category }} flash-message" role="alert">{{ message }}</div>
+                                    {% endfor %}
+                                  {% endif %}
+                                {% endwith %}
+                                <form id="contact-form" action="/submit_form" method="POST" novalidate>
+                                    <div class="mb-3">
+                                        <label for="nombre" class="form-label">Nombre Completo</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="empresa" class="form-label">Empresa</label>
+                                        <input type="text" class="form-control" id="empresa" name="empresa" required>
+                                    </div>
+                                     <div class="mb-3">
+                                        <label for="email" class="form-label">Email Corporativo</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="telefono" class="form-label">Teléfono (Opcional)</label>
+                                        <input type="tel" class="form-control" id="telefono" name="telefono">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="mensaje" class="form-label">¿Cómo podemos ayudarle?</label>
+                                        <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required placeholder="Ej: Quisiera una demo para 150 empleados..."></textarea>
+                                    </div>
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary btn-lg">Agendar mi Asesoría Gratuita</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-bottom text-center">
         <div class="container">
-            <h2 class="section-title">Nuestro proceso: <strong>simple, rápido y efectivo</strong></h2>
-            <div class="row g-4 process-steps">
-                <div class="col-lg-4">
-                    <div class="step-card h-100">
-                        <div class="step-number">1</div>
-                        <h3>Personalización</h3>
-                        <p>Adaptamos la encuesta a la estructura y necesidades específicas de tu organización.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="step-card h-100">
-                        <div class="step-number">2</div>
-                        <h3>Aplicación Anónima</h3>
-                        <p>Distribuimos la encuesta a través de un link único y seguro para garantizar el anonimato.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="step-card h-100">
-                        <div class="step-number">3</div>
-                        <h3>Reporte de Resultados</h3>
-                        <p>Recibes un reporte ejecutivo con hallazgos clave y recomendaciones accionables.</p>
-                    </div>
-                </div>
-            </div>
+            <p class="mb-0">&copy; 2025 Bienestar360.site. Todos los derechos reservados. Una solución para un México más productivo y saludable.</p>
         </div>
-    </section>
+    </footer>
 
-    <!-- 6. TESTIMONIOS -->
-    <section id="testimonios" class="section-padding">
-        <div class="container">
-            <h2 class="section-title">Empresas que ya <strong>mejoran su bienestar</strong></h2>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="testimonial-card h-100">
-                        <p>"El reporte fue revelador. Detectamos un problema de sobrecarga en un área que no teníamos en el radar. La rotación en ese equipo bajó un 20% en 6 meses."</p>
-                        <footer>
-                            <strong>Laura Jiménez</strong><br>
-                            <cite>Gerente de RRHH en InnovaTech</cite>
-                        </footer>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="testimonial-card h-100">
-                        <p>"La confianza que generó el anonimato fue clave. Cumplimos con la NOM-035 y obtuvimos un plan de acción claro para mejorar el liderazgo. Lo recomiendo totalmente."</p>
-                        <footer>
-                            <strong>Carlos Mendoza</strong><br>
-                            <cite>Director de Operaciones en Logística Express</cite>
-                        </footer>
-                    </div>
-                </div>
-            </div>
-            <div class="company-logos text-center mt-5">
-                <i class="fa-brands fa-diaspora" title="InnovaTech"></i>
-                <i class="fa-brands fa-docker" title="Logística Express"></i>
-                <i class="fa-brands fa-evernote" title="CorpSolutions"></i>
-                <i class="fa-brands fa-fedora" title="Manufactura Global"></i>
-            </div>
-        </div>
-    </section>
-    
-    <!-- 7. NUEVA SECCIÓN DE VIDEOS -->
-    <section id="videos" class="bg-light section-padding">
-        <div class="container">
-            <h2 class="section-title">Videos de Interés</h2>
-            <p class="text-center mb-4">Pega un enlace de YouTube para ver el video aquí mismo.</p>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="input-group mb-3">
-                        <input type="text" id="youtube-link" class="form-control form-control-lg" placeholder="https://www.youtube.com/watch?v=..." aria-label="Enlace de YouTube">
-                        <button class="btn btn-primary" type="button" id="embed-video-btn">Incrustar Video</button>
-                    </div>
-                    <!-- Contenedor para el video responsive -->
-                    <div id="video-container" class="mt-4 shadow-sm">
-                        <!-- El video se incrustará aquí con JavaScript -->
-                        <div class="text-center p-5 bg-white border rounded">
-                            <p class="text-muted">El video aparecerá aquí.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <!-- 8. FAQ -->
-    <section id="faq" class="section-padding">
-        <div class="container">
-            <h2 class="section-title">Preguntas Frecuentes</h2>
-            <div class="accordion" id="faqAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            ¿Es realmente obligatoria la NOM-035 para mi empresa?
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Sí. Es obligatoria para TODOS los centros de trabajo en México. La intensidad de las obligaciones varía según el número de empleados (hasta 15, de 16 a 50, y más de 50), pero ninguna empresa está exenta de aplicarla.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            ¿Cómo garantizan el anonimato de las respuestas?
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Utilizamos una plataforma tecnológica independiente. Los empleados responden a través de un enlace único que no recopila datos personales (IP, correo, nombre). Nosotros entregamos a RRHH únicamente los resultados consolidados y estadísticos, nunca respuestas individuales.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            ¿Qué riesgos corro si no la aplico o la aplico mal?
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Los riesgos son tres: <strong>1) Legales:</strong> Multas por parte de la STPS. <strong>2) Operativos:</strong> Alta rotación, ausentismo y baja productividad. <strong>3) Estratégicos:</strong> Tomar decisiones de personal basadas en información incorrecta, lo que puede agravar los problemas existentes.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Script para el incrustador de video de YouTube -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const embedBtn = document.getElementById('embed-video-btn');
+            const linkInput = document.getElementById('youtube-link-input');
+            const videoContainer = document.getElementById('video-embed-container');
+            const errorDiv = document.getElementById('video-error');
 
-    <!-- 9. FORMULARIO DE CONTACTO -->
-    <section id="contacto" class="bg-light section-padding">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-5 contact-info">
-                    <h3>¿Listo para tomar el control?</h3>
-                    <p>Agenda una asesoría gratuita y sin compromiso. Te mostraremos cómo nuestra plataforma puede adaptarse a tu empresa y resolver tus dudas sobre la NOM-035.</p>
-                    <a href="https://wa.me/529613488367?text=Hola,%20quisiera%20más%20información%20sobre%20las%20encuestas%20NOM-035." class="contact-link d-block mb-3" target="_blank">
-                        <i class="fa-brands fa-whatsapp"></i> Envíanos un WhatsApp
-                    </a>
-                    <a href="mailto:hola@bienestar360.site" class="contact-link d-block">
-                        <i class="fa-regular fa-envelope"></i> hola@bienestar360.site
-                    </a>
-                </div>
-                <div class="col-lg-7 contact-form-wrapper">
-                    {% with messages = get_flashed_messages(with_categories=true) %}
-                      {% if messages %}
-                        {% for category, message in messages %}
-                          <div class="alert alert-{{ 'success' if category == 'success' else 'danger' }} alert-dismissible fade show" role="alert">
-                              {{ message }}
-                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                          </div>
-                        {% endfor %}
-                      {% endif %}
-                    {% endwith %}
-                    <form id="contact-form" action="/submit_form" method="POST">
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre completo</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="empresa" class="form-label">Empresa</label>
-                            <input type="text" class="form-control" id="empresa" name="empresa" required>
-                        </div>
-                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="telefono" class="form-label">Teléfono</label>
-                            <input type="tel" class="form-control" id="telefono" name="telefono">
-                        </div>
-                        <div class="mb-3">
-                            <label for="mensaje" class="form-label">Mensaje</label>
-                            <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100 btn-lg">Agenda una asesoría gratuita</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
+            embedBtn.addEventListener('click', function() {
+                const url = linkInput.value;
+                const videoId = getYouTubeID(url);
+                errorDiv.textContent = ''; // Limpiar errores previos
 
-<footer class="main-footer-bottom bg-dark text-white text-center py-4">
-    <div class="container">
-        <p class="mb-0">&copy; 2025 Bienestar360.site. Todos los derechos reservados.</p>
-    </div>
-</footer>
+                if (videoId) {
+                    const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+                    videoContainer.innerHTML = `<iframe src="${embedUrl}" title="Reproductor de video de YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+                    videoContainer.style.display = 'block';
+                } else {
+                    errorDiv.textContent = 'Por favor, ingrese un enlace de YouTube válido (ej. https://www.youtube.com/watch?v=...)';
+                    videoContainer.style.display = 'none';
+                }
+            });
 
-<!-- El modal opcional no se incluyó según las instrucciones de no modificarlo, pero se podría adaptar con clases de Bootstrap si fuera necesario -->
-
-<!-- Bootstrap 5.3 JS Bundle CDN (incluye Popper) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-<!-- Custom JS (incluye la lógica para el video) -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Lógica para incrustar video de YouTube
-    const embedButton = document.getElementById('embed-video-btn');
-    const linkInput = document.getElementById('youtube-link');
-    const videoContainer = document.getElementById('video-container');
-
-    embedButton.addEventListener('click', function() {
-        const url = linkInput.value;
-        const videoId = getYouTubeVideoId(url);
-
-        if (videoId) {
-            const embedCode = `
-                <div class="ratio ratio-16x9">
-                    <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" 
-                            title="YouTube video player" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            allowfullscreen>
-                    </iframe>
-                </div>`;
-            videoContainer.innerHTML = embedCode;
-        } else {
-            // Muestra una alerta de Bootstrap dentro del contenedor
-            videoContainer.innerHTML = `
-                <div class="alert alert-danger" role="alert">
-                    El enlace no es válido. Por favor, pega un enlace de YouTube válido.
-                </div>`;
-        }
-    });
-
-    /**
-     * Extrae el ID de un video de YouTube desde varias URL posibles.
-     * @param {string} url La URL del video de YouTube.
-     * @returns {string|null} El ID del video o null si no se encuentra.
-     */
-    function getYouTubeVideoId(url) {
-        if (!url) return null;
-        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-        const match = url.match(regExp);
-        return (match && match[2].length === 11) ? match[2] : null;
-    }
-
-    // El código del archivo main.js original iría aquí o en su propio archivo
-    // Por ejemplo, la lógica para el menú móvil ya la maneja Bootstrap.
-    // Si tenías otra lógica en main.js, deberías agregarla aquí.
-});
-</script>
-
-<!-- El enlace a tu JS personalizado se mantiene por si tienes otra lógica -->
-<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+            function getYouTubeID(url) {
+                const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+                const match = url.match(regex);
+                return match ? match[1] : null;
+            }
+        });
+    </script>
 </body>
 </html>
